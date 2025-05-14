@@ -1,0 +1,283 @@
+/* Sidebar */
+.sidebar {
+    width: 270px;
+    background: #fff;
+    min-height: 100vh;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.03);
+    padding: 0 0 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 1000;
+}
+
+.sidebar .logo {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #ff5e5e;
+    margin-top: 32px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.sidebar .subtitle {
+    color: #ff9e9e;
+    font-size: 1.1rem;
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+.sidebar nav {
+    width: 100%;
+}
+
+.sidebar nav a {
+    display: block;
+    padding: 16px 32px;
+    color: #444;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+    border-radius: 0 24px 24px 0;
+    margin-bottom: 4px;
+}
+
+.sidebar nav a.active,
+.sidebar nav a:hover {
+    background: #ffeaea;
+    color: #ff5e5e;
+    font-weight: bold;
+}
+
+/* Main content */
+.main-content {
+    padding: 48px 48px 0 48px;
+    padding-top: 60px;
+}
+
+.main-content h1 {
+    font-size: 2.4rem;
+    font-weight: bold;
+    margin-bottom: 32px;
+}
+
+.main-content h2, 
+.main-content h3 {
+    font-weight: bold;
+    margin-top: 24px;
+}
+
+.main-content p {
+    font-size: 1.2rem;
+    margin-top: 16px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .sidebar {
+        width: 100%;
+        flex-direction: row;
+        min-height: unset;
+        box-shadow: none;
+    }
+    .main-content {
+        padding: 24px;
+    }
+}
+
+/* Topbar */
+.topbar {
+    width: 100%;
+    height: 64px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.topbar .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.topbar .right {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.topbar .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #eee;
+}
+
+/* Dashboard background */
+body, .dashboard-bg {
+    background: #f7f7f9;
+}
+
+/* Statistic Cards */
+.stats-row {
+    display: flex;
+    gap: 24px;
+    margin-top: 96px; /* Để tránh bị topbar che */
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+}
+
+.stat-card {
+    flex: 1 1 220px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    display: flex;
+    align-items: center;
+    padding: 24px;
+    min-width: 220px;
+    position: relative;
+    transition: box-shadow 0.2s;
+}
+
+.stat-card .icon {
+    font-size: 2.5rem;
+    color: #fff;
+    background: #4f8cff;
+    border-radius: 8px;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 18px;
+}
+
+.stat-card.green .icon { background: #2ecc71; }
+.stat-card.yellow .icon { background: #f1c40f; }
+.stat-card.blue .icon { background: #3498db; }
+.stat-card.orange .icon { background: #ff9800; }
+
+.stat-card .info {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-card .info .label {
+    font-size: 0.95rem;
+    color: #888;
+    margin-bottom: 4px;
+}
+
+.stat-card .info .value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #222;
+}
+
+/* Chart & Table */
+.dashboard-content {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.dashboard-chart, .dashboard-table {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    padding: 24px;
+}
+
+.dashboard-chart {
+    flex: 1 1 320px;
+    min-width: 320px;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.dashboard-table {
+    flex: 1 1 420px;
+    min-width: 420px;
+}
+
+.dashboard-table table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1rem;
+}
+
+.dashboard-table th, .dashboard-table td {
+    padding: 10px 8px;
+    text-align: left;
+}
+
+.dashboard-table th {
+    background: #f7f7f9;
+    color: #333;
+    font-weight: 600;
+}
+
+.dashboard-table tr {
+    border-bottom: 1px solid #eee;
+}
+
+.dashboard-table tr:last-child {
+    border-bottom: none;
+}
+
+.dashboard-table .status {
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #fff;
+    display: inline-block;
+}
+
+.status-delivered { background: #2ecc71; }
+.status-pending { background: #f1c40f; color: #333; }
+.status-cancel { background: #e74c3c; }
+.status-processing { background: #3498db; }
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .stats-row, .dashboard-content {
+        flex-direction: column;
+        gap: 16px;
+    }
+    .stat-card, .dashboard-chart, .dashboard-table {
+        min-width: unset;
+        width: 100%;
+    }
+}
+
+/* Đảm bảo header luôn ở trên cùng và không bị che */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1001; /* Đảm bảo lớn hơn sidebar */
+    background: #222; /* hoặc màu bạn muốn */
+    color: #fff;
+    height: 50px; /* hoặc chiều cao header của bạn */
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+} 

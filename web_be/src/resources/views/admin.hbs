@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard - Toy World</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    body { margin:0; font-family:'Montserrat',sans-serif; background:#f7f7f7;}
+    .sidebar {
+      width: 220px; background: #fff; height: 100vh; position: fixed; left: 0; top: 0; box-shadow: 2px 0 8px rgba(0,0,0,0.04);
+      display: flex; flex-direction: column; padding-top: 24px;
+    }
+    .sidebar .logo { font-size: 1.3rem; font-weight: 700; color: #e53935; margin-bottom: 32px; text-align: center;}
+    .sidebar a {
+      color: #333; text-decoration: none; padding: 14px 32px; display: block; font-weight: 500; border-left: 4px solid transparent;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .sidebar a.active, .sidebar a:hover { background: #ffeaea; border-left: 4px solid #e53935; color: #e53935;}
+    .main { margin-left: 220px; padding: 32px;}
+    .dashboard-cards { display: flex; gap: 32px; margin-bottom: 32px;}
+    .card {
+      background: #fff; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); padding: 24px 32px; min-width: 180px; flex:1;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+    }
+    .card .label { color: #888; font-size: 1rem; margin-bottom: 8px;}
+    .card .value { font-size: 1.5rem; font-weight: 700; color: #222;}
+    .card.green { border-top: 4px solid #43a047;}
+    .card.blue { border-top: 4px solid #039be5;}
+    .card.yellow { border-top: 4px solid #fbc02d;}
+    .card.red { border-top: 4px solid #e53935;}
+    .recent-orders { background: #fff; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); padding: 24px; }
+    table { width: 100%; border-collapse: collapse;}
+    th, td { padding: 10px 8px; text-align: left;}
+    th { color: #e53935; font-weight: 700; border-bottom: 2px solid #eee;}
+    tr:not(:last-child) { border-bottom: 1px solid #f0f0f0;}
+    .status { padding: 4px 12px; border-radius: 8px; font-size: 0.95rem;}
+    .status.done { background: #e8f5e9; color: #43a047;}
+    .status.pending { background: #fffde7; color: #fbc02d;}
+    .status.ship { background: #e3f2fd; color: #039be5;}
+    .status.cancel { background: #ffebee; color: #e53935;}
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo">Toy World<br><span style="font-size:0.9rem;font-weight:400;">Admin Panel</span></div>
+    <a href="#" class="active">Dashboard</a>
+    <a href="#">Quản lý sản phẩm</a>
+    <a href="#">Quản lý đơn hàng</a>
+    <a href="#">Quản lý khách hàng</a>
+    <a href="#">Quản lý danh mục</a>
+    <a href="#">Báo cáo</a>
+    <a href="#">Cài đặt</a>
+  </div>
+  <div class="main">
+    <h1>Dashboard</h1>
+    <div class="dashboard-cards">
+      <div class="card blue">
+        <div class="label">Đơn hàng hôm nay</div>
+        <div class="value" id="ordersToday">0</div>
+      </div>
+      <div class="card green">
+        <div class="label">Doanh thu hôm nay</div>
+        <div class="value" id="revenueToday">0đ</div>
+      </div>
+      <div class="card red">
+        <div class="label">Sản phẩm trong kho</div>
+        <div class="value" id="productsCount">0</div>
+      </div>
+      <div class="card yellow">
+        <div class="label">Khách hàng mới</div>
+        <div class="value" id="newCustomers">0</div>
+      </div>
+    </div>
+    <div class="recent-orders">
+      <h2>Đơn hàng gần đây</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Mã đơn</th>
+            <th>Khách hàng</th>
+            <th>Ngày đặt</th>
+            <th>Tổng tiền</th>
+            <th>Trạng thái</th>
+          </tr>
+        </thead>
+        <tbody id="ordersTable">
+          <!-- Dữ liệu đơn hàng sẽ được render ở đây -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script>
+    // Demo dữ liệu, bạn sẽ thay bằng fetch API backend thực tế
+    document.getElementById('ordersToday').innerText = 24;
+    document.getElementById('revenueToday').innerText = '18.450.000đ';
+    document.getElementById('productsCount').innerText = 142;
+    document.getElementById('newCustomers').innerText = 8;
+
+    // Đơn hàng mẫu
+    const orders = [
+      { code: '#TW2023001', customer: 'Nguyễn Văn A', date: '15/10/2023', total: '1.299.000đ', status: 'Đã giao' },
+      { code: '#TW2023002', customer: 'Trần Thị B', date: '15/10/2023', total: '2.450.000đ', status: 'Đang giao' }
+    ];
+    const statusClass = {
+      'Đã giao': 'done',
+      'Đang giao': 'ship',
+      'Chờ xử lý': 'pending',
+      'Đã huỷ': 'cancel'
+    };
+    const tbody = document.getElementById('ordersTable');
+    orders.forEach(o => {
+      tbody.innerHTML += `
+        <tr>
+          <td>${o.code}</td>
+          <td>${o.customer}</td>
+          <td>${o.date}</td>
+          <td>${o.total}</td>
+          <td><span class="status ${statusClass[o.status]||''}">${o.status}</span></td>
+        </tr>
+      `;
+    });
+  </script>
+</body>
+</html>

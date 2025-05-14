@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giỏ hàng - Toy World</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    body {background: #f7f7f7; font-family: 'Montserrat', sans-serif; margin: 0;}
+    .header {background: #f44336; color: #fff; padding: 18px 0; text-align: center; font-size: 2rem; font-weight: 700;}
+    .cart-container {max-width: 1100px; margin: 40px auto; display: flex; gap: 32px;}
+    .cart-main {flex: 2; background: #fff; border-radius: 12px; padding: 32px 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.06);}
+    .cart-title {font-size: 1.5rem; font-weight: 700; margin-bottom: 18px;}
+    table {width: 100%; border-collapse: collapse;}
+    th, td {padding: 12px 8px; text-align: left;}
+    th {background: #f5f5f5; color: #333; font-weight: 600;}
+    tr:not(:last-child) {border-bottom: 1px solid #eee;}
+    .cart-img {width: 60px; height: 60px; object-fit: cover; border-radius: 8px;}
+    .cart-name {font-weight: 600;}
+    .cart-status {color: #388e3c; font-size: 0.95rem;}
+    .cart-price {color: #f44336; font-weight: 700;}
+    .cart-old {color: #888; text-decoration: line-through; font-size: 0.95rem;}
+    .qty-group {display: flex; align-items: center; gap: 6px;}
+    .qty-btn {background: #eee; border: none; border-radius: 4px; width: 28px; height: 28px; font-size: 1.1rem; cursor: pointer;}
+    .qty-input {width: 36px; text-align: center; border: 1px solid #ddd; border-radius: 4px; padding: 4px;}
+    .remove-btn {background: none; border: none; color: #f44336; font-size: 1.2rem; cursor: pointer;}
+    .cart-summary {flex: 1; background: #fff; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); padding: 24px 20px; height: fit-content;}
+    .summary-title {font-size: 1.2rem; font-weight: 700; margin-bottom: 16px;}
+    .summary-row {display: flex; justify-content: space-between; margin-bottom: 10px;}
+    .summary-total {font-size: 1.2rem; font-weight: 700; color: #f44336;}
+    .summary-discount {color: #fff; background: #fbc02d; border-radius: 4px; padding: 2px 8px; font-size: 1rem;}
+    .checkout-btn {width: 100%; background: #f44336; color: #fff; border: none; border-radius: 8px; padding: 14px; font-size: 1.1rem; font-weight: 700; cursor: pointer; margin-top: 18px; transition: background 0.2s;}
+    .checkout-btn:hover {background: #d32f2f;}
+    @media (max-width: 900px) {
+      .cart-container {flex-direction: column;}
+      .cart-summary {margin-top: 24px;}
+    }
+  </style>
+</head>
+<body>
+  <div class="header">Toy World</div>
+  <div class="cart-container">
+    <div class="cart-main">
+      <div class="cart-title">Giỏ hàng của bạn</div>
+      <table id="cartTable">
+        <thead>
+          <tr>
+            <th>Sản phẩm</th>
+            <th>Đơn giá</th>
+            <th>Số lượng</th>
+            <th>Thành tiền</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="cartBody">
+          <!-- Sản phẩm sẽ được render ở đây -->
+        </tbody>
+      </table>
+    </div>
+    <div class="cart-summary">
+      <div class="summary-title">Tóm tắt đơn hàng</div>
+      <div class="summary-row"><span>Tạm tính:</span><span id="subtotal">0đ</span></div>
+      <div class="summary-row"><span>Giảm giá:</span><span class="summary-discount" id="discount">-0đ</span></div>
+      <div class="summary-row"><span>Phí vận chuyển:</span><span>Miễn phí</span></div>
+      <div class="summary-row summary-total"><span>Tổng cộng:</span><span id="total">0đ</span></div>
+      <button class="checkout-btn">Tiến hành thanh toán</button>
+    </div>
+  </div>
+  <script>
+    // Dữ liệu mẫu
+    let cart = [
+      {
+        id: 1,
+        name: 'Robot Biến Hình XYZ',
+        img: 'https://cdn.pixabay.com/photo/2016/03/31/19/56/robot-1294086_1280.png',
+        price: 1299000,
+        oldPrice: 1599000,
+        quantity: 1,
+        status: 'Còn hàng',
+        version: 'Cao cấp'
+      },
+      {
+        id: 2,
+        name: 'Thỏ bông',
+        img: 'https://cdn.pixabay.com/photo/2017/01/06/19/15/soap-bubble-1958650_1280.jpg',
+        price: 899000,
+        oldPrice: null,
+        quantity: 2,
+        status: 'Còn hàng',
+        version: ''
+      }
+    ];
+    let discount = 300; // Giảm giá mẫu
+
+    function formatMoney(n) {
+      return n.toLocaleString('vi-VN') + 'đ';
+    }
+
+    function renderCart() {
+      const cartBody = document.getElementById('cartBody');
+      cartBody.innerHTML = '';
+      let subtotal = 0;
+      cart.forEach(item => {
+        const itemTotal = item.price * item.quantity;
+        subtotal += itemTotal;
+        cartBody.innerHTML += `
+          <tr>
+            <td>
+              <div style="display:flex;align-items:center;gap:10px;">
+                <img src="${item.img}" class="cart-img">
+                <div>
+                  <div class="cart-name">${item.name}</div>
+                  <div style="font-size:0.95rem;color:#888;">Phiên bản: ${item.version || '-'}</div>
+                  <div class="cart-status">${item.status}</div>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div class="cart-price">${formatMoney(item.price)}</div>
+              ${item.oldPrice ? `<div class="cart-old">${formatMoney(item.oldPrice)}</div>` : ''}
+            </td>
+            <td>
+              <div class="qty-group">
+                <button class="qty-btn" onclick="updateQty(${item.id}, -1)">-</button>
+                <input class="qty-input" type="text" value="${item.quantity}" readonly>
+                <button class="qty-btn" onclick="updateQty(${item.id}, 1)">+</button>
+              </div>
+            </td>
+            <td class="cart-price">${formatMoney(itemTotal)}</td>
+            <td><button class="remove-btn" onclick="removeItem(${item.id})">🗑️</button></td>
+          </tr>
+        `;
+      });
+      document.getElementById('subtotal').innerText = formatMoney(subtotal);
+      document.getElementById('discount').innerText = '-' + formatMoney(discount);
+      document.getElementById('total').innerText = formatMoney(subtotal - discount);
+    }
+
+    function updateQty(id, change) {
+      cart = cart.map(item => {
+        if (item.id === id) {
+          let newQty = item.quantity + change;
+          if (newQty < 1) newQty = 1;
+          return { ...item, quantity: newQty };
+        }
+        return item;
+      });
+      renderCart();
+    }
+
+    function removeItem(id) {
+      cart = cart.filter(item => item.id !== id);
+      renderCart();
+    }
+
+    renderCart();
+  </script>
+</body>
+</html> 

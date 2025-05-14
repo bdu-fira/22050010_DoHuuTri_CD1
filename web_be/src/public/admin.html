@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard - Toy World</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo">Toy World<br><span style="font-size:0.9rem;font-weight:400;">Admin Panel</span></div>
+    <a href="#" class="active">Dashboard</a>
+    <a href="#">Quản lý sản phẩm</a>
+    <a href="#">Quản lý đơn hàng</a>
+    <a href="#">Quản lý khách hàng</a>
+    <a href="#">Quản lý danh mục</a>
+    <a href="#">Báo cáo</a>
+    <a href="#">Cài đặt</a>
+  </div>
+  <div class="main">
+    <h1>Dashboard</h1>
+    <div class="dashboard-cards">
+      <div class="card blue">
+        <div class="label">Đơn hàng hôm nay</div>
+        <div class="value" id="ordersToday">0</div>
+      </div>
+      <div class="card green">
+        <div class="label">Doanh thu hôm nay</div>
+        <div class="value" id="revenueToday">0đ</div>
+      </div>
+      <div class="card red">
+        <div class="label">Sản phẩm trong kho</div>
+        <div class="value" id="productsCount">0</div>
+      </div>
+      <div class="card yellow">
+        <div class="label">Khách hàng mới</div>
+        <div class="value" id="newCustomers">0</div>
+      </div>
+    </div>
+    <div class="recent-orders">
+      <h2>Đơn hàng gần đây</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Mã đơn</th>
+            <th>Khách hàng</th>
+            <th>Ngày đặt</th>
+            <th>Tổng tiền</th>
+            <th>Trạng thái</th>
+          </tr>
+        </thead>
+        <tbody id="ordersTable">
+          <!-- Dữ liệu đơn hàng sẽ được render ở đây -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script>
+    // Demo dữ liệu, bạn sẽ thay bằng fetch API backend thực tế
+    document.getElementById('ordersToday').innerText = 24;
+    document.getElementById('revenueToday').innerText = '18.450.000đ';
+    document.getElementById('productsCount').innerText = 142;
+    document.getElementById('newCustomers').innerText = 8;
+
+    // Đơn hàng mẫu
+    const orders = [
+      { code: '#TW2023001', customer: 'Nguyễn Văn A', date: '15/10/2023', total: '1.299.000đ', status: 'Đã giao' },
+      { code: '#TW2023002', customer: 'Trần Thị B', date: '15/10/2023', total: '2.450.000đ', status: 'Đang giao' }
+    ];
+    const statusClass = {
+      'Đã giao': 'done',
+      'Đang giao': 'ship',
+      'Chờ xử lý': 'pending',
+      'Đã huỷ': 'cancel'
+    };
+    const tbody = document.getElementById('ordersTable');
+    orders.forEach(o => {
+      tbody.innerHTML += `
+        <tr>
+          <td>${o.code}</td>
+          <td>${o.customer}</td>
+          <td>${o.date}</td>
+          <td>${o.total}</td>
+          <td><span class="status ${statusClass[o.status]||''}">${o.status}</span></td>
+        </tr>
+      `;
+    });
+  </script>
+</body>
+</html>

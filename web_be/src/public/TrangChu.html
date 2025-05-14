@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Trang chủ - Toy World</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    body {background: #f7f7f7; font-family: 'Montserrat', sans-serif;}
+    .navbar {display: flex; align-items: center; background: #f44336; color: #fff; padding: 12px 32px;}
+    .logo {font-size: 1.5rem; font-weight: 700; margin-right: 32px;}
+    .menu {display: flex; gap: 24px;}
+    .dropdown {position: relative;}
+    .dropbtn {background: none; border: none; color: #fff; font-size: 1rem; font-weight: 700; cursor: pointer;}
+    .dropdown-content {
+      display: none; position: absolute; background: #fff; min-width: 200px; box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      z-index: 1; border-radius: 8px; margin-top: 8px; padding: 8px 0;
+    }
+    .dropdown-content a {
+      color: #f44336; padding: 10px 18px; text-decoration: none; display: block; font-weight: 500;
+    }
+    .dropdown-content a:hover {background: #f7f7f7;}
+    .dropdown:hover .dropdown-content {display: block;}
+    .container {max-width: 1200px; margin: 40px auto;}
+    .products {display: flex; flex-wrap: wrap; gap: 32px;}
+    .card {background: #fff; border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.08); padding: 24px; width: 220px; text-align: center;}
+    .card img {width: 120px; height: 120px; object-fit: cover; border-radius: 12px;}
+    .title {font-size: 1.2rem; font-weight: 700; margin: 12px 0;}
+    .price {color: #f44336; font-weight: 700; margin-bottom: 8px;}
+    .btn {background: #f44336; color: #fff; border: none; border-radius: 8px; padding: 10px 18px; font-size: 1rem; font-weight: 700; cursor: pointer;}
+    .btn:hover {background: #d32f2f;}
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <a href="/TrangChu.html" class="logo">Toy World</a>
+    <div class="menu">
+      <div class="dropdown">
+        <button class="dropbtn">SẢN PHẨM ▼</button>
+        <div class="dropdown-content" id="categoryMenu">
+          <!-- Danh mục sẽ được render ở đây -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <h1>Danh sách sản phẩm</h1>
+    <div class="products" id="productList"></div>
+  </div>
+  <script>
+    let allProducts = [];
+    async function loadCategories() {
+      const res = await fetch('http://localhost:3000/api/categories');
+      const data = await res.json();
+      const menu = document.getElementById('categoryMenu');
+      menu.innerHTML = '<a href="#" onclick="showAllProducts();return false;"><b>Xe các loại</b></a>';
+      if (data.success && data.categories.length > 0) {
+        data.categories.forEach(cat => {
+          menu.innerHTML += `<a href="#" onclick="filterByCategory(${cat.id});return false;">${cat.name}</a>`;
+        });
+      }
+    }
+    async function loadProducts() {
+      const res = await fetch('http://localhost:3000/api/products');
+      const data = await res.json();
+      allProducts = data.products || [];
+      renderProducts(allProducts);
+    }
+    function renderProducts(products) {
+      const list = document.getElementById('productList');
+      list.innerHTML = '';
+      if (products.length > 0) {
+        products.forEach(p => {
+          list.innerHTML += `
+            <div class="card">
+              <img src="${p.image || '/img/products/img.jpg'}" alt="${p.name}" style="width:120px;height:120px;object-fit:cover;border-radius:12px;background:#fff;">
+              <div class="title">${p.name}</div>
+              <div>${p.description || ''}</div>
+              <div class="price">${Number(p.price).toLocaleString('vi-VN')}đ</div>
+              <button class="btn">Mua Ngay</button>
+            </div>
+          `;
+        });
+      } else {
+        list.innerHTML = '<p>Không có sản phẩm nào.</p>';
+      }
+    }
+    function filterByCategory(categoryId) {
+      const filtered = allProducts.filter(p => p.categoryId === categoryId);
+      renderProducts(filtered);
+    }
+    function showAllProducts() {
+      renderProducts(allProducts);
+    }
+    loadCategories();
+    loadProducts();
+  </script>
+</body>
+</html> 

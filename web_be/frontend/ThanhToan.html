@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toy World - USER</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="grid.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="fontawesome-free-6.4.0-web/css/all.min.css">   
+</head>
+<body>
+    <div class="app">
+        <header class="main-header">
+            <!-- Promo Bar -->
+            <div class="promo-bar">
+                🎉 GIẢM 30% ĐƠN TRÊN 500K | 🚚 MIỄN PHÍ VẬN CHUYỂN | ☎️ HOTLINE: 0123.456.789
+            </div>
+    
+            <!-- Main Navigation -->
+            <div class="header-main">
+                <div class="container">
+                    <!-- Logo -->
+                    <a href="TrangChu.html" class="logo">
+                        <!--
+                        <img src="logo.png" alt="Toy World">-->
+                        <div class="logo-text">
+                            <h1>Toy World</h1>
+                            <p>Thiên đường đồ chơi trẻ em</p>
+                        </div>
+                    </a>
+    
+                    <!-- Search -->
+                    <div class="search-box">
+                        <input type="text" placeholder="Tìm đồ chơi...">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+    
+                    <!-- Actions -->
+                    <div class="header-actions">
+                        <a href="DangNhap.html">Login</i></a>
+                        <a href="user.html"><i class="far fa-user"></i></a>
+                        <a href="GioHang.html" class="cart">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                    </div>
+    
+                    
+                </div>
+            </div>
+    
+            <!-- Category Navigation -->
+            <nav class="category-nav">
+                <div class="container">
+                    <ul class="category-menu">
+                        <!-- Danh mục 1 -->
+                        <li class="menu-item">
+                            <a href="TrangChu.html">TRANG CHỦ</a>
+                        </li>
+    
+                        <!-- Danh mục 2 -->
+                        <li class="menu-item">
+                            <a href="TrangChu.html">SẢN PHẨM <i class="fas fa-chevron-down"></i></a>
+                            <div class="mega-menu">
+                                <div class="mega-menu-column">
+                                    <h4>Xe các loại</h4>
+                                    <ul>
+                                        <li><a href="#">Đồ chơi theo phim</a></li>
+                                        <li><a href="#">Đồ chơi phương tiện</a></li>
+                                        <li><a href="#">Đồ chơi lắp ráp</a></li>
+                                        <li><a href="#">Đồ chơi thời trang</a></li>
+                                        <li><a href="#">Đồ chơi động vật</a></li>
+                                        <li><a href="#">Búp bê</a></li>
+                                        <li><a href="#">Thú bông</a></li>
+                                        <li><a href="#">Robot</a></li>
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+    
+                        <!-- Danh mục 3 -->
+                        <li class="menu-item">
+                            <a href="#">KHUYẾN MÃI</a>
+                        </li>
+    
+                        <!-- Danh mục 4 -->
+                        <li class="menu-item">
+                            <a href="#">GIỚI THIỆU SHOP</i></a>
+                        </li>
+    
+                        <!-- Danh mục 5 -->
+                        <li class="menu-item">
+                            <a href="#">SẢN PHẨM MỚI</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main Checkout Content -->
+        <main class="checkout-container">
+            <div class="container">
+                <!-- Breadcrumb -->
+                <nav class="breadcrumb">
+                    <ol>
+                        <li><a href="index.html">Trang chủ</a></li>
+                        <li><a href="cart.html">Giỏ hàng</a></li>
+                        <li>Thanh toán</li>
+                    </ol>
+                </nav>
+    
+                <h1 class="page-title">Thanh toán đơn hàng</h1>
+    
+                <div class="checkout-grid">
+                    <!-- Checkout Steps -->
+                    <div class="checkout-steps">
+                        <div class="step active" data-step="1">
+                            <div class="step-number">1</div>
+                            <div class="step-title">Thông tin giao hàng</div>
+                        </div>
+                        <div class="step" data-step="2">
+                            <div class="step-number">2</div>
+                            <div class="step-title">Phương thức thanh toán</div>
+                        </div>
+                        <div class="step" data-step="3">
+                            <div class="step-number">3</div>
+                            <div class="step-title">Xác nhận đơn hàng</div>
+                        </div>
+                    </div>
+    
+                    <!-- Checkout Main Content -->
+                    <div class="checkout-content">
+                        <!-- Step 1: Shipping Information -->
+                        <div class="checkout-step active" id="step-1">
+                            <h2 class="step-heading">Thông tin giao hàng</h2>
+                            
+                            <form class="shipping-form">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="fullname">Họ và tên*</label>
+                                        <input type="text" id="fullname" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="phone">Số điện thoại*</label>
+                                        <input type="tel" id="phone" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="address">Địa chỉ*</label>
+                                    <input type="text" id="address" required>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="city">Tỉnh/Thành phố*</label>
+                                        <select id="city" required>
+                                            <option value="">Chọn Tỉnh/TP</option>
+                                            <option value="hcm">TP. Hồ Chí Minh</option>
+                                            <option value="hn">Hà Nội</option>
+                                            <option value="dn">Đà Nẵng</option>
+                                            <!-- Thêm các tỉnh thành khác -->
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="district">Quận/Huyện*</label>
+                                        <select id="district" required>
+                                            <option value="">Chọn Quận/Huyện</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="note">Ghi chú đơn hàng</label>
+                                    <textarea id="note" rows="3"></textarea>
+                                </div>
+                                
+                                <div class="form-actions">
+                                    <button type="button" class="btn-next" data-next="2">Tiếp tục</button>
+                                </div>
+                            </form>
+                        </div>
+    
+                        <!-- Step 2: Payment Method -->
+                        <div class="checkout-step" id="step-2">
+                            <h2 class="step-heading">Phương thức thanh toán</h2>
+                            
+                            <div class="payment-methods">
+                                <div class="payment-method">
+                                    <input type="radio" name="payment" id="cod" checked>
+                                    <label for="cod">
+                                        <i class="fas fa-money-bill-wave"></i>
+                                        <span>Thanh toán khi nhận hàng (COD)</span>
+                                    </label>
+                                </div>
+                                
+                                <div class="payment-method">
+                                    <input type="radio" name="payment" id="bank">
+                                    <label for="bank">
+                                        <i class="fas fa-university"></i>
+                                        <span>Chuyển khoản ngân hàng</span>
+                                    </label>
+                                    <div class="payment-details">
+                                        <p>Quý khách vui lòng chuyển khoản theo thông tin:</p>
+                                        <ul>
+                                            <li>Ngân hàng: <strong>Vietcombank</strong></li>
+                                            <li>Số tài khoản: <strong>0123456789</strong></li>
+                                            <li>Chủ tài khoản: <strong>Công ty Toy World</strong></li>
+                                            <li>Nội dung: <strong>Mã đơn hàng + Số điện thoại</strong></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="payment-method">
+                                    <input type="radio" name="payment" id="momo">
+                                    <label for="momo">
+                                        <img src="images/payments/momo.png" alt="Momo" class="payment-icon">
+                                        <span>Ví điện tử Momo</span>
+                                    </label>
+                                </div>
+                                
+                                <div class="payment-method">
+                                    <input type="radio" name="payment" id="zalopay">
+                                    <label for="zalopay">
+                                        <img src="images/payments/zalopay.png" alt="ZaloPay" class="payment-icon">
+                                        <span>ZaloPay</span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="button" class="btn-prev" data-prev="1">Quay lại</button>
+                                <button type="button" class="btn-next" data-next="3">Tiếp tục</button>
+                            </div>
+                        </div>
+    
+                        <!-- Step 3: Order Review -->
+                        <div class="checkout-step" id="step-3">
+                            <h2 class="step-heading">Xác nhận đơn hàng</h2>
+                            
+                            <div class="order-review">
+                                <div class="order-section">
+                                    <h3>Thông tin giao hàng</h3>
+                                    <div class="order-info" id="shipping-review"></div>
+                                </div>
+                                
+                                <div class="order-section">
+                                    <h3>Phương thức thanh toán</h3>
+                                    <div class="order-info" id="payment-review"></div>
+                                </div>
+                                
+                                <div class="order-section">
+                                    <h3>Đơn hàng của bạn</h3>
+                                    <div class="order-products">
+                                        <!-- Sản phẩm sẽ được hiển thị ở đây -->
+                                    </div>
+                                    <div class="order-totals">
+                                        <div class="order-row">
+                                            <span>Tạm tính:</span>
+                                            <span id="subtotal-review">2.797.000₫</span>
+                                        </div>
+                                        <div class="order-row">
+                                            <span>Phí vận chuyển:</span>
+                                            <span id="shipping-review">Miễn phí</span>
+                                        </div>
+                                        <div class="order-row">
+                                            <span>Giảm giá:</span>
+                                            <span id="discount-review">-300.000₫</span>
+                                        </div>
+                                        <div class="order-row total">
+                                            <span>Tổng cộng:</span>
+                                            <span id="total-review">2.497.000₫</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="order-notes">
+                                    <div class="form-group checkbox-group">
+                                        <input type="checkbox" id="agree-terms" required>
+                                        <label for="agree-terms">Tôi đồng ý với <a href="#">Điều khoản dịch vụ</a> và <a href="#">Chính sách bảo mật</a></label>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-actions">
+                                    <button type="button" class="btn-prev" data-prev="2">Quay lại</button>
+                                    <button type="button" class="btn-submit">Đặt hàng</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Order Summary -->
+                    <div class="order-summary">
+                        <h3 class="summary-title">Đơn hàng của bạn</h3>
+                        
+                        <div class="order-products">
+                            <div class="order-product">
+                                <img src="product1.jpg" alt="Robot Biến Hình">
+                                <div class="product-info">
+                                    <h4>Robot Biến Hình XYZ</h4>
+                                    <p>1 x 1.299.000₫</p>
+                                </div>
+                            </div>
+                            
+                            <div class="order-product">
+                                <img src="product1.jpg" alt="LEGO Creator">
+                                <div class="product-info">
+                                    <h4>LEGO Creator</h4>
+                                    <p>2 x 899.000₫</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="order-totals">
+                            <div class="order-row">
+                                <span>Tạm tính:</span>
+                                <span>3.097.000₫</span>
+                            </div>
+                            <div class="order-row">
+                                <span>Giảm giá:</span>
+                                <span class="discount">-300.000₫</span>
+                            </div>
+                            <div class="order-row">
+                                <span>Phí vận chuyển:</span>
+                                <span class="shipping">Miễn phí</span>
+                            </div>
+                            <div class="order-row total">
+                                <span>Tổng cộng:</span>
+                                <span class="total-price">2.797.000₫</span>
+                            </div>
+                        </div>
+                        
+                        <div class="promo-code">
+                            <h4>Mã giảm giá</h4>
+                            <div class="promo-input">
+                                <input type="text" placeholder="Nhập mã giảm giá">
+                                <button class="apply-btn">Áp dụng</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    
+        <footer class="main-footer">
+            <!-- Footer Top -->
+            <div class="footer-top">
+                <div class="container">
+                    <div class="footer-grid">
+                        <!-- Column 1 -->
+                        <div class="footer-col">
+                            <h3 class="footer-title">Toy World</h3>
+                            <div class="footer-about">
+                                <p>Thiên đường đồ chơi cho mọi lứa tuổi</p>
+                                <div class="footer-contact">
+                                    <p><i class="fas fa-map-marker-alt"></i> 123 Đường Tuổi Thơ, Q.1, TP.HCM</p>
+                                    <p><i class="fas fa-phone"></i> 1900 123 456</p>
+                                    <p><i class="fas fa-envelope"></i> info@toyworld.vn</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Column 2 -->
+                        <div class="footer-col">
+                            <h3 class="footer-title">Danh mục</h3>
+                            <ul class="footer-links">
+                                <li><a href="#"><i class="fas fa-chevron-right"></i> Đồ chơi theo phim</a></li>
+                                <li><a href="#"><i class="fas fa-chevron-right"></i> Đồ chơi phương tiện</a></li>
+                                <li><a href="#"><i class="fas fa-chevron-right"></i> Đồ chơi lắp ghép</a></li>
+                                <li><a href="#"><i class="fas fa-chevron-right"></i> Búp bê</a></li>
+                                <li><a href="#"><i class="fas fa-chevron-right"></i> Đồ chơi vận động</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Column 3 -->
+                        <div class="footer-col">
+                            <h3 class="footer-title">Hỗ trợ</h3>
+                            <ul class="footer-links">
+                                <li><a href="#"><i class="fas fa-chevron-right"></i> Chính sách đổi trả</a></li>
+                                <li><a href="#"><i class="fas fa-chevron-right"></i> Hướng dẫn mua hàng</a></li>
+                                <li><a href="#"><i class="fas fa-chevron-right"></i> Thanh toán & vận chuyển</a></li>
+                                <li><a href="#"><i class="fas fa-chevron-right"></i> Câu hỏi thường gặp</a></li>
+                                <li><a href="#"><i class="fas fa-chevron-right"></i> Bảo mật thông tin</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Column 4 -->
+                        <div class="footer-col">
+                            <h3 class="footer-title">Kết nối với chúng tôi</h3>
+                            <div class="footer-social">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-youtube"></i></a>
+                                <a href="#"><i class="fab fa-tiktok"></i></a>
+                                <a href="#"><i class="fab fa-zalo"></i></a>
+                            </div>
+                            
+                            <div class="footer-newsletter">
+                                <h4>Đăng ký nhận khuyến mãi</h4>
+                                <form>
+                                    <input type="email" placeholder="Email của bạn..." required>
+                                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    
+        <script src="js/checkout.js"></script>
+    </div>
+
+</body>
+</html>

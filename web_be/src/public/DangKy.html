@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đăng ký - Toy World</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      min-height: 100vh;
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+      background: url('/img/toy.jpg') center center/cover no-repeat fixed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .container {
+      max-width: 500px;
+      width: 100%;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 16px;
+      box-shadow: 0 0 30px rgba(0,0,0,0.2);
+      padding: 48px 40px 36px 40px;
+      backdrop-filter: blur(15px);
+      color: #fff;
+      margin: 0;
+    }
+    .logo {text-align: center; font-size: 2rem; color: #f44336; font-weight: 700; margin-bottom: 16px;}
+    h2 {text-align: center; margin-bottom: 24px; color: #fff; font-weight: bold;}
+    .form-group {
+      margin-bottom: 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    label {
+      display: block;
+      margin-bottom: 6px;
+      color: #fff;
+      font-weight: bold;
+      font-size: 1rem;
+      align-self: flex-start;
+      margin-left: 10%;
+    }
+    input[type="text"], input[type="email"], input[type="password"] {
+      width: 80% !important;
+      min-width: 180px;
+      max-width: 340px;
+      padding: 12px 16px;
+      background: rgba(255,255,255,0.7);
+      color: #333;
+      border-radius: 8px;
+      border: none;
+      border-bottom: 2px solid #fff;
+      font-size: 1rem;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 0;
+      transition: background 0.3s;
+    }
+    input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+      outline: none;
+      background: #fff;
+    }
+    .btn {
+      width: 100%;
+      background: #f44336;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 12px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 8px;
+      transition: background 0.2s;
+    }
+    .btn:hover {background: #d32f2f;}
+    .register-link {text-align: center; margin-top: 18px; font-size: 1rem;}
+    .register-link a {color: #ffd1d1; text-decoration: none; font-weight: 600;}
+    .register-link a:hover {text-decoration: underline;}
+    .error {color: #ffd1d1; text-align: center; margin-bottom: 10px;}
+    .success {color: #388e3c; text-align: center; margin-bottom: 10px;}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">Toy World</div>
+    <h2>Đăng ký tài khoản</h2>
+    <div id="msg"></div>
+    <form id="registerForm">
+      <div class="form-group">
+        <label for="fullName">Họ và tên</label>
+        <input type="text" id="fullName" required placeholder="Nhập họ tên">
+      </div>
+      <div class="form-group">
+        <label for="username">Tên đăng nhập</label>
+        <input type="text" id="username" required placeholder="Nhập tên đăng nhập">
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" required placeholder="Nhập email">
+      </div>
+      <div class="form-group">
+        <label for="password">Mật khẩu</label>
+        <input type="password" id="password" required placeholder="Nhập mật khẩu">
+      </div>
+      <button type="submit" class="btn">Đăng ký</button>
+    </form>
+    <div class="register-link">
+      Đã có tài khoản? <a href="DangNhap.html">Đăng nhập</a>
+    </div>
+  </div>
+  <script>
+    const form = document.getElementById('registerForm');
+    const msg = document.getElementById('msg');
+    form.onsubmit = async (e) => {
+      e.preventDefault();
+      msg.innerHTML = '';
+      const fullName = document.getElementById('fullName').value.trim();
+      const username = document.getElementById('username').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value;
+      try {
+        const res = await fetch('/api/auth/register', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({ fullName, username, email, password })
+        });
+        const data = await res.json();
+        if (data.success) {
+          msg.innerHTML = '<div class="success">Đăng ký thành công! Đang chuyển sang trang đăng nhập...</div>';
+          setTimeout(() => { window.location.href = 'DangNhap.html'; }, 1200);
+        } else {
+          msg.innerHTML = `<div class="error">${data.message || 'Đăng ký thất bại!'}</div>`;
+        }
+      } catch (err) {
+        msg.innerHTML = '<div class="error">Lỗi kết nối server!</div>';
+      }
+    };
+  </script>
+</body>
+</html> 

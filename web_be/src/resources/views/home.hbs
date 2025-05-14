@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="/css/app.css">
+
+<main class="container">
+  <section class="products">
+    <div class="product-grid">
+      {{#each products}}
+      <div class="product-card">
+        <div class="product-image">
+          <img src="{{this.image}}" alt="{{this.name}}">
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">{{this.name}}</h3>
+          <p class="product-desc">{{this.description}}</p>
+          <p class="product-price">{{this.price}}đ</p>
+          <a href="/san-pham/{{this.slug}}" class="btn-buy">Mua Ngay</a>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <p>&copy; 2025 Shop Đồ Chơi. Tất cả quyền được bảo lưu.</p>
+  </div>
+</footer>
+
+<script src="/js/script.js"></script>

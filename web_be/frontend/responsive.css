@@ -1,0 +1,76 @@
+/* PC */
+@media (max-width: 1023px) {
+    .nav__bart-btn {
+        display: block;
+    }
+    .header__sort-linkbar {
+        display: flex;
+    }
+    .header__navbar {
+        display: none;
+    }
+    .header-with-search {
+        height: 100%;
+        padding-bottom: 10px;
+    }
+    .header__mobile {
+        display: block;
+        display: flex;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+    }
+    .header__mobile-btn {
+        width: 33.33334%;
+        margin-right: 0;
+        align-items: center;
+    }
+    .header__mobile-logo {
+        width: 33.33334%;
+        align-items: center;
+    }
+    .header__mobile-cart {
+        width: 33.33334%;
+    }
+    .header__logo {
+        display: none;
+    }
+
+    .header__cart {
+        display: none;
+    }
+    .home-filter {
+        display: none;
+    }
+    .category {
+        display: none;
+    }
+    footer {
+        text-align: center;
+    }
+    .ThanhToan__DonHang-chitiet {
+        padding-left: 80px;
+    }
+    .thanhtoan {
+        padding-left: 160px;
+    }
+}
+@media (max-width: 739px) {
+    .auth-form{ 
+        width: 100%;
+    }
+    .auth-form__socials-title{ 
+        display: none;
+    }
+    .footer__heading-item {
+        padding: 0 20px;    
+    }
+    .number__item {
+        width: 30px;
+        font-size: 1.5rem;
+    }
+    .DonGia {
+        margin-left: -40px;
+    }
+    
+}

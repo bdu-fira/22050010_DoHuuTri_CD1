@@ -1,0 +1,77 @@
+body { margin:0; font-family:'Montserrat',sans-serif; background:#f7f7f7;}
+.sidebar {
+  width: 220px; background: #fff; height: 100vh; position: fixed; left: 0; top: 40px; box-shadow: 2px 0 8px rgba(0,0,0,0.04);
+  display: flex; flex-direction: column; padding-top: 24px;
+}
+.sidebar .logo { font-size: 1.3rem; font-weight: 700; color: #e53935; margin-bottom: 32px; text-align: center;}
+.sidebar a {
+  color: #333; text-decoration: none; padding: 14px 32px; display: block; font-weight: 500; border-left: 4px solid transparent;
+  transition: background 0.2s, border-color 0.2s;
+}
+.sidebar a.active {
+  background: #ffeaea; border-left: 4px solid #e53935; color: #e53935;
+}
+.sidebar a:hover:not(.active) {
+  background: #f7f7f7; color: #e53935;
+}
+.main { margin-left: 220px; padding: 32px; padding-top: 40px;}
+.admin-logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.admin-logo img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+.admin-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  border: 2px solid #ffd700;
+  object-fit: cover;
+}
+.admin-sidebar h4 {
+  margin-bottom: 2rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.admin-sidebar .nav-link.active, .admin-sidebar .nav-link:hover {
+  background: #343a40;
+  color: #ffd700 !important;
+  border-radius: 6px;
+}
+.admin-main {
+  flex-grow: 1;
+  padding: 40px 32px 32px 32px;
+  background: #fff;
+  min-height: 100vh;
+  border-radius: 18px;
+  margin: 32px 32px 32px 0;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+}
+.table {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+@media (max-width: 900px) {
+  .admin-main {
+    margin: 16px 0 16px 0;
+    padding: 16px;
+  }
+  .admin-sidebar {
+    min-width: 120px;
+    padding: 10px 5px;
+  }
+} 

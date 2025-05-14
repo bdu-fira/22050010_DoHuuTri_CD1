@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toy World - USER</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="grid.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="fontawesome-free-6.4.0-web/css/all.min.css">   
+</head>
+<body>
+    <div class="app">
+        <header class="main-header">
+            <!-- Promo Bar -->
+            <div class="promo-bar">
+                🎉 GIẢM 30% ĐƠN TRÊN 500K | 🚚 MIỄN PHÍ VẬN CHUYỂN | ☎️ HOTLINE: 0123.456.789
+            </div>
+    
+            <!-- Main Navigation -->
+            <div class="header-main">
+                <div class="container">
+                    <!-- Logo -->
+                    <a href="TrangChu.html" class="logo">
+                        <!--
+                        <img src="logo.png" alt="Toy World">-->
+                        <div class="logo-text">
+                            <h1>Toy World</h1>
+                            <p>Thiên đường đồ chơi trẻ em</p>
+                        </div>
+                    </a>
+    
+                    <!-- Search -->
+                    <div class="search-box">
+                        <input type="text" placeholder="Tìm đồ chơi...">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+    
+                    <!-- Actions -->
+                    <div class="header-actions">
+                        <a href="DangNhap.html">Login</i></a>
+                        <a href="user.html"><i class="far fa-user"></i></a>
+                        <a href="GioHang.html" class="cart">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                    </div>
+    
+                    
+                </div>
+            </div>
+    
+            <!-- Category Navigation -->
+            <nav class="category-nav">
+                <div class="container">
+                    <ul class="category-menu">
+                        <!-- Danh mục 1 -->
+                        <li class="menu-item">
+                            <a href="TrangChu.html">TRANG CHỦ</a>
+                        </li>
+    
+                        <!-- Danh mục 2 -->
+                        <li class="menu-item">
+                            <a href="TrangChu.html">SẢN PHẨM <i class="fas fa-chevron-down"></i></a>
+                            <div class="mega-menu">
+                                <div class="mega-menu-column">
+                                    <h4>Xe các loại</h4>
+                                    <ul>
+                                        <li><a href="#">Đồ chơi theo phim</a></li>
+                                        <li><a href="#">Đồ chơi phương tiện</a></li>
+                                        <li><a href="#">Đồ chơi lắp ráp</a></li>
+                                        <li><a href="#">Đồ chơi thời trang</a></li>
+                                        <li><a href="#">Đồ chơi động vật</a></li>
+                                        <li><a href="#">Búp bê</a></li>
+                                        <li><a href="#">Thú bông</a></li>
+                                        <li><a href="#">Robot</a></li>
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+    
+                        <!-- Danh mục 3 -->
+                        <li class="menu-item">
+                            <a href="#">KHUYẾN MÃI</a>
+                        </li>
+    
+                        <!-- Danh mục 4 -->
+                        <li class="menu-item">
+                            <a href="#">GIỚI THIỆU SHOP</i></a>
+                        </li>
+    
+                        <!-- Danh mục 5 -->
+                        <li class="menu-item">
+                            <a href="#">SẢN PHẨM MỚI</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- Main Cart Content -->
+        <main class="cart-container">
+            <div class="container">
+                <!-- Breadcrumb -->
+                <nav class="breadcrumb">
+                    <ol>
+                        <li><a href="index.html">Trang chủ</a></li>
+                        <li>Giỏ hàng</li>
+                    </ol>
+                </nav>
+    
+                <h1 class="page-title">Giỏ hàng của bạn</h1>
+    
+                <div class="cart-grid">
+                    <!-- Cart Items -->
+                    <div class="cart-items">
+                        <!-- Cart Header -->
+                        <div class="cart-header">
+                            <div class="header-product">Sản phẩm</div>
+                            <div class="header-price">Đơn giá</div>
+                            <div class="header-quantity">Số lượng</div>
+                            <div class="header-total">Thành tiền</div>
+                            <div class="header-actions"></div>
+                        </div>
+    
+                        <!-- Cart Item 1 -->
+                        <div class="cart-item">
+                            <div class="item-product">
+                                <img src="product1.jpg" alt="Robot Biến Hình" class="product-image">
+                                <div class="product-info">
+                                    <h3 class="product-name">Robot Biến Hình XYZ</h3>
+                                    <p class="product-variant">Phiên bản: Cao cấp</p>
+                                    <div class="product-stock">Còn hàng</div>
+                                </div>
+                            </div>
+                            <div class="item-price">
+                                <span class="current-price">1.299.000₫</span>
+                                <span class="old-price">1.599.000₫</span>
+                            </div>
+                            <div class="item-quantity">
+                                <button class="qty-btn minus"><i class="fas fa-minus"></i></button>
+                                <input type="number" value="1" min="1" max="10" class="qty-input">
+                                <button class="qty-btn plus"><i class="fas fa-plus"></i></button>
+                            </div>
+                            <div class="item-total">1.299.000₫</div>
+                            <div class="item-actions">
+                                <button class="remove-btn" title="Xóa"><i class="fas fa-trash"></i></button>
+                                <button class="save-btn" title="Lưu sau"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+    
+                        <!-- Cart Item 2 -->
+                        <div class="cart-item">
+                            <div class="item-product">
+                                <img src="product.jpg" alt="LEGO Creator" class="product-image">
+                                <div class="product-info">
+                                    <h3 class="product-name">Thỏ bông</h3>
+                                    <p class="product-variant">Mã: THUBONG-2023-01</p>
+                                    <div class="product-stock">Còn hàng</div>
+                                </div>
+                            </div>
+                            <div class="item-price">899.000₫</div>
+                            <div class="item-quantity">
+                                <button class="qty-btn minus"><i class="fas fa-minus"></i></button>
+                                <input type="number" value="2" min="1" max="10" class="qty-input">
+                                <button class="qty-btn plus"><i class="fas fa-plus"></i></button>
+                            </div>
+                            <div class="item-total">1.798.000₫</div>
+                            <div class="item-actions">
+                                <button class="remove-btn" title="Xóa"><i class="fas fa-trash"></i></button>
+                                <button class="save-btn" title="Lưu sau"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+    
+                        <!-- Cart Actions -->
+                        <div class="cart-actions">
+                            <button class="continue-shopping">
+                                <i class="fas fa-arrow-left"></i> Tiếp tục mua hàng
+                            </button>
+                            <button class="update-cart">Cập nhật giỏ hàng</button>
+                        </div>
+                    </div>
+    
+                    <!-- Cart Summary -->
+                    <div class="cart-summary">
+                        <div class="summary-card">
+                            <h3 class="summary-title">Tóm tắt đơn hàng</h3>
+                            
+                            <div class="summary-row">
+                                <span>Tạm tính:</span>
+                                <span>3.097.000₫</span>
+                            </div>
+                            
+                            <div class="summary-row">
+                                <span>Giảm giá:</span>
+                                <span class="discount">-300.000₫</span>
+                            </div>
+                            
+                            <div class="summary-row">
+                                <span>Phí vận chuyển:</span>
+                                <span class="shipping">Miễn phí</span>
+                            </div>
+                            
+                            <div class="summary-divider"></div>
+                            
+                            <div class="summary-row total">
+                                <span>Tổng cộng:</span>
+                                <span class="total-price">2.797.000₫</span>
+                            </div>
+                            
+                            <a href="ThanhToan.html"><button class="checkout-btn">Tiến hành thanh toán</button></a>
+                        </div>
+                        
+                        <div class="promo-code">
+                            <h4>Mã giảm giá</h4>
+                            <div class="promo-input">
+                                <input type="text" placeholder="Nhập mã giảm giá">
+                                <button class="apply-btn">Áp dụng</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Suggested Products -->
+                <section class="suggested-products">
+                    <h2 class="section-title">Có thể bạn sẽ thích</h2>
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <img src="product.jpg" alt="Xe Đua Siêu Tốc" class="product-image">
+                            <h3 class="product-title">Xe Đua Siêu Tốc</h3>
+                            <p class="product-description">Xe đua điều khiển từ xa với tốc độ cao, thiết kế thể thao</p>
+                            <p class="product-price">200.000đ</p>
+                            <button class="buy-button">Mua Ngay</button>
+                        </div>
+                        <div class="product-card">
+                            <img src="product.jpg" alt="Xe Đua Siêu Tốc" class="product-image">
+                            <h3 class="product-title">Xe Đua Siêu Tốc</h3>
+                            <p class="product-description">Xe đua điều khiển từ xa với tốc độ cao, thiết kế thể thao</p>
+                            <p class="product-price">200.000đ</p>
+                            <button class="buy-button">Mua Ngay</button>
+                        </div>
+                        <div class="product-card">
+                            <img src="product.jpg" alt="Xe Đua Siêu Tốc" class="product-image">
+                            <h3 class="product-title">Xe Đua Siêu Tốc</h3>
+                            <p class="product-description">Xe đua điều khiển từ xa với tốc độ cao, thiết kế thể thao</p>
+                            <p class="product-price">200.000đ</p>
+                            <button class="buy-button">Mua Ngay</button>
+                        </div>
+                        <div class="product-card">
+                            <img src="product.jpg" alt="Xe Đua Siêu Tốc" class="product-image">
+                            <h3 class="product-title">Xe Đua Siêu Tốc</h3>
+                            <p class="product-description">Xe đua điều khiển từ xa với tốc độ cao, thiết kế thể thao</p>
+                            <p class="product-price">200.000đ</p>
+                            <button class="buy-button">Mua Ngay</button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+        <footer class="main-footer">
+            <!-- Footer Top -->
+            <div class="footer-top">
+                <div class="container">
+                    <div class="footer-grid">
+                        <!-- Column 1 -->
+                        <div class="footer-col">
+                            <h3 class="footer-title">Toy World</h3>
+                            <div class="footer-about">
+                                <p>Thiên đường đồ chơi cho mọi lứa tuổi</p>
+                                <div class="footer-contact">
+                                    <p><i class="fas fa-map-marker-alt"></i> 123 Đường Tuổi Thơ, Q.1, TP.HCM</p>
+                                    <p><i class="fas fa-phone"></i> 1900 123 456</p>
+                                    <p><i class="fas fa-envelope"></i> info@toyworld.vn</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <!-- Column 2 -->
+                        <div class="footer-col">
+                            <h3 class="footer-title">Danh mục</h3>
+                            <ul class="footer-links">
+                                <li><a href="#"><i class="fas fa-chevron-right"></i> Đồ chơi theo phim</a></li>
+                                <li><a href="#"><i class="fas fa-chevron-right"></i> Đồ chơi phương tiện</a></li>
+                                <li><a href="#"><i class="fas fa-chevron-right"></i> Đồ chơi lắp ghép</a></li>
+                                <li><a href="#"><i class="fas fa-chevron-right"></i> Búp bê</a></li>
+                                <li><a href="#"><i class="fas fa-chevron-right"></i> Đồ chơi vận động</a></li>
+                            </ul>
+                        </div>
+    
+                        <!-- Column 3 -->
+                        <div class="footer-col">
+                            <h3 class="footer-title">Hỗ trợ</h3>
+                            <ul class="footer-links">
+                                <li><a href="#"><i class="fas fa-chevron-right"></i> Chính sách đổi trả</a></li>
+                                <li><a href="#"><i class="fas fa-chevron-right"></i> Hướng dẫn mua hàng</a></li>
+                                <li><a href="#"><i class="fas fa-chevron-right"></i> Thanh toán & vận chuyển</a></li>
+                                <li><a href="#"><i class="fas fa-chevron-right"></i> Câu hỏi thường gặp</a></li>
+                                <li><a href="#"><i class="fas fa-chevron-right"></i> Bảo mật thông tin</a></li>
+                            </ul>
+                        </div>
+    
+                        <!-- Column 4 -->
+                        <div class="footer-col">
+                            <h3 class="footer-title">Kết nối với chúng tôi</h3>
+                            <div class="footer-social">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-youtube"></i></a>
+                                <a href="#"><i class="fab fa-tiktok"></i></a>
+                                <a href="#"><i class="fab fa-zalo"></i></a>
+                            </div>
+                            
+                            <div class="footer-newsletter">
+                                <h4>Đăng ký nhận khuyến mãi</h4>
+                                <form>
+                                    <input type="email" placeholder="Email của bạn..." required>
+                                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

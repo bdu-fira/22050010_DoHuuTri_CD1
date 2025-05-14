@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toy World - USER</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="grid.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="fontawesome-free-6.4.0-web/css/all.min.css">   
+</head>
+<body>
+    <div class="app">
+        <header class="main-header">
+            <!-- Promo Bar -->
+            <div class="promo-bar">
+                🎉 GIẢM 30% ĐƠN TRÊN 500K | 🚚 MIỄN PHÍ VẬN CHUYỂN | ☎️ HOTLINE: 0123.456.789
+            </div>
+    
+            <!-- Main Navigation -->
+            <div class="header-main">
+                <div class="container">
+                    <!-- Logo -->
+                    <a href="TrangChu.html" class="logo">
+                        <!--
+                        <img src="logo.png" alt="Toy World">-->
+                        <div class="logo-text">
+                            <h1>Toy World</h1>
+                            <p>Thiên đường đồ chơi trẻ em</p>
+                        </div>
+                    </a>
+    
+                    <!-- Search -->
+                    <div class="search-box">
+                        <input type="text" placeholder="Tìm đồ chơi...">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+    
+                    <!-- Actions -->
+                    <div class="header-actions">
+                        <a href="DangNhap.html">Login</i></a>
+                        <a href="user.html"><i class="far fa-user"></i></a>
+                        <a href="GioHang.html" class="cart">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                    </div>
+    
+                    
+                </div>
+            </div>
+    
+            <!-- Category Navigation -->
+            <nav class="category-nav">
+                <div class="container">
+                    <ul class="category-menu">
+                        <!-- Danh mục 1 -->
+                        <li class="menu-item">
+                            <a href="TrangChu.html">TRANG CHỦ</a>
+                        </li>
+    
+                        <!-- Danh mục 2 -->
+                        <li class="menu-item">
+                            <a href="TrangChu.html">SẢN PHẨM <i class="fas fa-chevron-down"></i></a>
+                            <div class="mega-menu">
+                                <div class="mega-menu-column">
+                                    <h4>Xe các loại</h4>
+                                    <ul>
+                                        <li><a href="#">Đồ chơi theo phim</a></li>
+                                        <li><a href="#">Đồ chơi phương tiện</a></li>
+                                        <li><a href="#">Đồ chơi lắp ráp</a></li>
+                                        <li><a href="#">Đồ chơi thời trang</a></li>
+                                        <li><a href="#">Đồ chơi động vật</a></li>
+                                        <li><a href="#">Búp bê</a></li>
+                                        <li><a href="#">Thú bông</a></li>
+                                        <li><a href="#">Robot</a></li>
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+    
+                        <!-- Danh mục 3 -->
+                        <li class="menu-item">
+                            <a href="#">KHUYẾN MÃI</a>
+                        </li>
+    
+                        <!-- Danh mục 4 -->
+                        <li class="menu-item">
+                            <a href="GioiThieu.html">GIỚI THIỆU SHOP</i></a>
+                        </li>
+    
+                        <!-- Danh mục 5 -->
+                        <li class="menu-item">
+                            <a href="#">SẢN PHẨM MỚI</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+    
+    
+        <!-- Main Account Content -->
+        <main class="account-container">
+            <div class="container">
+                <!-- Breadcrumb -->
+                <nav class="breadcrumb">
+                    <ol>
+                        <li><a href="index.html">Trang chủ</a></li>
+                        <li>Tài khoản của tôi</li>
+                    </ol>
+                </nav>
+    
+                <h1 class="page-title">Tài khoản của tôi</h1>
+    
+                <div class="account-layout">
+                    <!-- Sidebar Menu -->
+                    <aside class="account-sidebar">
+                        <div class="user-profile">
+                            <div class="avatar">
+                                <img src="user.jpg" alt="Người dùng">
+                                <button class="change-avatar"><i class="fas fa-camera"></i></button>
+                            </div>
+                            <h3 class="username">Chương Nhược Nam</h3>
+                            <p class="user-email">nguyenvana@example.com</p>
+                        </div>
+    
+                        <nav class="account-menu">
+                            <ul>
+                                <li class="active"><a href="#orders"><i class="fas fa-box-open"></i> Đơn hàng của tôi</a></li>
+                                <li><a href="#addresses"><i class="fas fa-map-marker-alt"></i> Sổ địa chỉ</a></li>
+                                <li><a href="#profile"><i class="fas fa-user"></i> Thông tin tài khoản</a></li>
+                                <li><a href="#password"><i class="fas fa-lock"></i> Đổi mật khẩu</a></li>
+                                <li><a href="#wishlist"><i class="fas fa-heart"></i> Sản phẩm yêu thích</a></li>
+                                <li><a href="index.html"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a></li>
+                            </ul>
+                        </nav>
+                    </aside>
+    
+                    <!-- Main Content -->
+                    <div class="account-content">
+                        <!-- Orders Tab (Active by default) -->
+                        <div class="account-tab active" id="orders">
+                            <h2 class="tab-title">Đơn hàng của tôi</h2>
+                            
+                            <div class="order-list">
+                                <!-- Order 1 -->
+                                <div class="order-card">
+                                    <div class="order-header">
+                                        <div class="order-meta">
+                                            <span class="order-number">Đơn hàng #DH20230001</span>
+                                            <span class="order-date">Ngày đặt: 15/10/2023</span>
+                                        </div>
+                                        <div class="order-status delivered">Đã giao hàng</div>
+                                    </div>
+                                    
+                                    <div class="order-body">
+                                        <div class="order-products">
+                                            <div class="product-item">
+                                                <img src="product1.jpg" alt="Robot Biến Hình">
+                                                <div class="product-info">
+                                                    <h4>Robot Biến Hình XYZ</h4>
+                                                    <p>Số lượng: 1</p>
+                                                </div>
+                                            </div>
+                                            <div class="product-item">
+                                                <img src="product.jpg" alt="LEGO Creator">
+                                                <div class="product-info">
+                                                    <h4>Thỏ bông</h4>
+                                                    <p>Số lượng: 2</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="order-summary">
+                                            <div class="summary-row">
+                                                <span>Tổng tiền:</span>
+                                                <span class="order-total">2.797.000₫</span>
+                                            </div>
+                                            <div class="order-actions">
+                                                <button class="btn btn-reorder">Mua lại</button>
+                                                <button class="btn btn-details">Xem chi tiết</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Order 2 -->
+                                <div class="order-card">
+                                    <div class="order-header">
+                                        <div class="order-meta">
+                                            <span class="order-number">Đơn hàng #DH20230002</span>
+                                            <span class="order-date">Ngày đặt: 05/11/2023</span>
+                                        </div>
+                                        <div class="order-status shipping">Đang giao hàng</div>
+                                    </div>
+                                    
+                                    <div class="order-body">
+                                        <div class="order-products">
+                                            <div class="product-item">
+                                                <img src="product.jpg" alt="Búp bê">
+                                                <div class="product-info">
+                                                    <h4>Búp bê thời trang</h4>
+                                                    <p>Số lượng: 1</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="order-summary">
+                                            <div class="summary-row">
+                                                <span>Tổng tiền:</span>
+                                                <span class="order-total">1.299.000₫</span>
+                                            </div>
+                                            <div class="order-actions">
+                                                <button class="btn btn-track">Theo dõi đơn hàng</button>
+                                                <button class="btn btn-details">Xem chi tiết</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Empty State -->
+                                <div class="empty-orders" style="display: none;">
+                                    <i class="fas fa-box-open"></i>
+                                    <p>Bạn chưa có đơn hàng nào</p>
+                                    <a href="products.html" class="btn btn-primary">Mua sắm ngay</a>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <!-- Addresses Tab -->
+                        <div class="account-tab" id="addresses">
+                            <h2 class="tab-title">Sổ địa chỉ</h2>
+                            
+                            <div class="address-list">
+                                <!-- Address 1 (Default) -->
+                                <div class="address-card default">
+                                    <div class="address-header">
+                                        <h3>Địa chỉ mặc định</h3>
+                                        <div class="address-actions">
+                                            <button class="btn-edit"><i class="fas fa-edit"></i> Sửa</button>
+                                            <button class="btn-remove"><i class="fas fa-trash"></i> Xóa</button>
+                                        </div>
+                                    </div>
+                                    <div class="address-body">
+                                        <p><strong>Chương Nhược Nam</strong></p>
+                                        <p>123 Đường Tuổi Thơ, Phường 5, Quận 1</p>
+                                        <p>TP. Hồ Chí Minh</p>
+                                        <p>Điện thoại: 0901234567</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Address 2 -->
+                                <div class="address-card">
+                                    <div class="address-header">
+                                        <h3>Địa chỉ nhà riêng</h3>
+                                        <div class="address-actions">
+                                            <button class="btn-edit"><i class="fas fa-edit"></i> Sửa</button>
+                                            <button class="btn-remove"><i class="fas fa-trash"></i> Xóa</button>
+                                            <button class="btn-set-default">Đặt làm mặc định</button>
+                                        </div>
+                                    </div>
+                                    <div class="address-body">
+                                        <p><strong>Chương Nhược Nam</strong></p>
+                                        <p>456 Đường Hạnh Phúc, Phường 2, Quận Tân Bình</p>
+                                        <p>TP. Hồ Chí Minh</p>
+                                        <p>Điện thoại: 0901234567</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Add New Address -->
+                                <div class="add-address-card">
+                                    <button class="btn-add-address">
+                                        <i class="fas fa-plus"></i>
+                                        <span>Thêm địa chỉ mới</span>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <!-- Add/Edit Address Form (Hidden by default) -->
+                            <div class="address-form" style="display: none;">
+                                <h3>Thêm địa chỉ mới</h3>
+                                <form>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="fullname">Họ và tên*</label>
+                                            <input type="text" id="fullname" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="phone">Số điện thoại*</label>
+                                            <input type="tel" id="phone" required>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="address">Địa chỉ*</label>
+                                        <input type="text" id="address" required>
+                                    </div>
+                                    
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="city">Tỉnh/Thành phố*</label>
+                                            <select id="city" required>
+                                                <option value="">Chọn Tỉnh/TP</option>
+                                                <option value="hcm">TP. Hồ Chí Minh</option>
+                                                <option value="hn">Hà Nội</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="district">Quận/Huyện*</label>
+                                            <select id="district" required>
+                                                <option value="">Chọn Quận/Huyện</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group checkbox-group">
+                                        <input type="checkbox" id="set-default">
+                                        <label for="set-default">Đặt làm địa chỉ mặc định</label>
+                                    </div>
+                                    
+                                    <div class="form-actions">
+                                        <button type="button" class="btn btn-cancel">Hủy</button>
+                                        <button type="submit" class="btn btn-save">Lưu địa chỉ</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+    
+                        <!-- Profile Tab -->
+                        <div class="account-tab" id="profile">
+                            <h2 class="tab-title">Thông tin tài khoản</h2>
+                            
+                            <form class="profile-form">
+                                <div class="avatar-upload">
+                                    <div class="avatar-preview">
+                                        <img src="user.jpg" alt="Avatar">
+                                    </div>
+                                    <div class="avatar-actions">
+                                        <label for="avatar-upload" class="btn btn-upload">Chọn ảnh</label>
+                                        <input type="file" id="avatar-upload" accept="image/*">
+                                        <button type="button" class="btn btn-remove">Xóa ảnh</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="profile-fullname">Họ và tên*</label>
+                                        <input type="text" id="profile-fullname" value="Chương Nhược Nam" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="profile-phone">Số điện thoại*</label>
+                                        <input type="tel" id="profile-phone" value="0901234567" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="profile-email">Email*</label>
+                                    <input type="email" id="profile-email" value="chuongnhuocnam@student.bdu.edu.vn" readonly>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="profile-birthday">Ngày sinh</label>
+                                    <input type="date" id="profile-birthday" value="1990-01-01">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="profile-gender">Giới tính</label>
+                                    <select id="profile-gender">
+                                        <option value="male">Nam</option>
+                                        <option value="female">Nữ</option>
+                                        <option value="other">Khác</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn-save">Lưu thay đổi</button>
+                                </div>
+                            </form>
+                        </div>
+    
+                        <!-- Password Tab -->
+                        <div class="account-tab" id="password">
+                            <h2 class="tab-title">Đổi mật khẩu</h2>
+                            
+                            <form class="password-form">
+                                <div class="form-group">
+                                    <label for="current-password">Mật khẩu hiện tại*</label>
+                                    <div class="input-with-icon">
+                                        <i class="fas fa-lock"></i>
+                                        <input type="password" id="current-password" required>
+                                        <button type="button" class="toggle-password">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="new-password">Mật khẩu mới*</label>
+                                    <div class="input-with-icon">
+                                        <i class="fas fa-lock"></i>
+                                        <input type="password" id="new-password" required minlength="6">
+                                        <button type="button" class="toggle-password">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </div>
+                                    <p class="help-text">Mật khẩu tối thiểu 6 ký tự</p>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="confirm-password">Xác nhận mật khẩu*</label>
+                                    <div class="input-with-icon">
+                                        <i class="fas fa-lock"></i>
+                                        <input type="password" id="confirm-password" required>
+                                        <button type="button" class="toggle-password">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn-save">Đổi mật khẩu</button>
+                                </div>
+                            </form>
+                        </div>
+    
+                        <!-- Wishlist Tab -->
+                        <div class="account-tab" id="wishlist">
+                            <h2 class="tab-title">Sản phẩm yêu thích</h2>
+                            
+                            <div class="wishlist-grid">
+                                <!-- Product 1 -->
+                                <div class="wishlist-item">
+                                    <div class="product-image">
+                                        <img src="product1.jpg" alt="Robot Biến Hình">
+                                        <button class="btn-remove-wishlist" title="Xóa">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </div>
+                                    <div class="product-info">
+                                        <h3 class="product-name">Robot Biến Hình XYZ</h3>
+                                        <div class="product-price">
+                                            <span class="current-price">1.299.000₫</span>
+                                            <span class="old-price">1.599.000₫</span>
+                                        </div>
+                                        <div class="product-stock">Còn hàng</div>
+                                    </div>
+                                    <button class="btn-add-to-cart">Thêm vào giỏ hàng</button>
+                                </div>
+                                
+                                <!-- Product 2 -->
+                                <div class="wishlist-item">
+                                    <div class="product-image">
+                                        <img src="product.jpg" alt="Búp bê">
+                                        <button class="btn-remove-wishlist" title="Xóa">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </div>
+                                    <div class="product-info">
+                                        <h3 class="product-name">Búp bê thời trang</h3>
+                                        <div class="product-price">899.000₫</div>
+                                        <div class="product-stock out">Hết hàng</div>
+                                    </div>
+                                    <button class="btn-add-to-cart" disabled>Hết hàng</button>
+                                </div>
+                                
+                                <!-- Empty State -->
+                                <div class="empty-wishlist" style="display: none;">
+                                    <i class="fas fa-heart"></i>
+                                    <p>Danh sách yêu thích của bạn đang trống</p>
+                                    <a href="products.html" class="btn btn-primary">Mua sắm ngay</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    
+        <footer class="main-footer">
+            <!-- Footer Top -->
+            <div class="footer-top">
+                <div class="container">
+                    <div class="footer-grid">
+                        <!-- Column 1 -->
+                        <div class="footer-col">
+                            <h3 class="footer-title">Toy World</h3>
+                            <div class="footer-about">
+                                <p>Thiên đường đồ chơi cho mọi lứa tuổi</p>
+                                <div class="footer-contact">
+                                    <p><i class="fas fa-map-marker-alt"></i> 123 Đường Tuổi Thơ, Q.1, TP.HCM</p>
+                                    <p><i class="fas fa-phone"></i> 1900 123 456</p>
+                                    <p><i class="fas fa-envelope"></i> info@toyworld.vn</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <!-- Column 2 -->
+                        <div class="footer-col">
+                            <h3 class="footer-title">Danh mục</h3>
+                            <ul class="footer-links">
+                                <li><a href="#"><i class="fas fa-chevron-right"></i> Đồ chơi theo phim</a></li>
+                                <li><a href="#"><i class="fas fa-chevron-right"></i> Đồ chơi phương tiện</a></li>
+                                <li><a href="#"><i class="fas fa-chevron-right"></i> Đồ chơi lắp ghép</a></li>
+                                <li><a href="#"><i class="fas fa-chevron-right"></i> Búp bê</a></li>
+                                <li><a href="#"><i class="fas fa-chevron-right"></i> Đồ chơi vận động</a></li>
+                            </ul>
+                        </div>
+    
+                        <!-- Column 3 -->
+                        <div class="footer-col">
+                            <h3 class="footer-title">Hỗ trợ</h3>
+                            <ul class="footer-links">
+                                <li><a href="#"><i class="fas fa-chevron-right"></i> Chính sách đổi trả</a></li>
+                                <li><a href="#"><i class="fas fa-chevron-right"></i> Hướng dẫn mua hàng</a></li>
+                                <li><a href="#"><i class="fas fa-chevron-right"></i> Thanh toán & vận chuyển</a></li>
+                                <li><a href="#"><i class="fas fa-chevron-right"></i> Câu hỏi thường gặp</a></li>
+                                <li><a href="#"><i class="fas fa-chevron-right"></i> Bảo mật thông tin</a></li>
+                            </ul>
+                        </div>
+    
+                        <!-- Column 4 -->
+                        <div class="footer-col">
+                            <h3 class="footer-title">Kết nối với chúng tôi</h3>
+                            <div class="footer-social">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-youtube"></i></a>
+                                <a href="#"><i class="fab fa-tiktok"></i></a>
+                                <a href="#"><i class="fab fa-zalo"></i></a>
+                            </div>
+                            
+                            <div class="footer-newsletter">
+                                <h4>Đăng ký nhận khuyến mãi</h4>
+                                <form>
+                                    <input type="email" placeholder="Email của bạn..." required>
+                                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
